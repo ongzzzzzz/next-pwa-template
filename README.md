@@ -26,7 +26,7 @@ You can rename the `.env` file to `.env.local` and add your credentials into it 
 ```js
 import firebase from '../path/to/lib/firebase';
 
-firebase.firestore().collection().doc()get()
+firebase.firestore().collection().doc().get()
 .then(doc => {
     // do stuff
 }).catch(err => console.error({ err }))
@@ -42,10 +42,10 @@ const fetcher = async (...args) => {
     return res.json();
 };
 
-export default function WaitableComponent({ children }) {
+export default function WaitableComponent() {
     const { data } = useSWR(`/api/my-collection`, fetcher, { refreshInterval: 6900 });
     if (data) { return <div>{data}</div> }
-    else { return <></> }
+    else { return <div></div> }
 }
 ```
 
