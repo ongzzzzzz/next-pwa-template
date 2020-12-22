@@ -26,7 +26,7 @@ You can rename the `.env` file to `.env.local` and add your credentials into it 
 ```js
 import firebase from '../path/to/lib/firebase';
 
-firebase.firestore().collection().doc().get()
+firebase.firestore().collection('foo').doc('bar').get()
 .then(doc => {
     // do stuff
 }).catch(err => console.error({ err }))
